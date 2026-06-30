@@ -2,22 +2,70 @@
 # 复制此文件为 config.yaml 并填入真实配置
 
 # ============ AI模型配置 ============
+# 本项目基于 OpenAI SDK 的 base_url 机制，兼容所有 OpenAI API 格式的厂商
+# 切换模型只需两步：1) 改 default_model  2) 取消对应厂商的注释并填入 api_key
+# 无需修改任何 Python 代码
+
 ai:
-  # 默认使用的模型: "openai" 或 "claude"
+  # 默认使用的模型，对应下方的配置块名称
+  # 可选值: "openai", "claude", "deepseek", "qwen", "doubao", "gemini", "ollama"
   default_model: "openai"
-  
+
+  # ──────────── OpenAI（官方，质量最高）────────────
   openai:
     api_key: "sk-your-openai-api-key"
     model: "gpt-4o"
-    base_url: "https://api.openai.com/v1"  # 可替换为代理地址
+    base_url: "https://api.openai.com/v1"
     max_tokens: 2000
     temperature: 0.8
-  
-  claude:
-    api_key: "sk-ant-your-claude-api-key"
-    model: "claude-sonnet-4-20250514"
-    max_tokens: 2000
-    temperature: 0.8
+
+  # ──────────── Claude（Anthropic，代码能力强）────────────
+  # claude:
+  #   api_key: "sk-ant-your-claude-api-key"
+  #   model: "claude-sonnet-4-20250514"
+  #   base_url: "https://api.anthropic.com/v1"
+  #   max_tokens: 2000
+  #   temperature: 0.8
+
+  # ──────────── DeepSeek（国产，性价比高）────────────
+  # deepseek:
+  #   api_key: "sk-your-deepseek-api-key"
+  #   model: "deepseek-chat"
+  #   base_url: "https://api.deepseek.com/v1"
+  #   max_tokens: 2000
+  #   temperature: 0.8
+
+  # ──────────── 阿里Qwen（通义千问，中文强）────────────
+  # qwen:
+  #   api_key: "sk-your-dashscope-api-key"
+  #   model: "qwen-max"
+  #   base_url: "https://dashscope.aliyuncs.com/compatible-mode/v1"
+  #   max_tokens: 2000
+  #   temperature: 0.8
+
+  # ──────────── 字节豆包（火山引擎，低成本）────────────
+  # doubao:
+  #   api_key: "sk-your-volces-api-key"
+  #   model: "doubao-pro-32k"
+  #   base_url: "https://ark.cn-beijing.volces.com/api/v3"
+  #   max_tokens: 2000
+  #   temperature: 0.8
+
+  # ──────────── Gemini（Google，长上下文）────────────
+  # gemini:
+  #   api_key: "sk-your-gemini-api-key"
+  #   model: "gemini-1.5-pro"
+  #   base_url: "https://generativelanguage.googleapis.com/v1beta/openai/"
+  #   max_tokens: 2000
+  #   temperature: 0.8
+
+  # ──────────── 本地Ollama（零成本，需本地部署）────────────
+  # ollama:
+  #   api_key: "ollama"  # Ollama不需要真实key，填任意字符串即可
+  #   model: "llama3.1:8b"
+  #   base_url: "http://localhost:11434/v1"
+  #   max_tokens: 2000
+  #   temperature: 0.8
 
 # ============ 热点数据源配置 ============
 hotspot:
@@ -60,7 +108,7 @@ hotspot:
     - "IPO"
     - "裁员"
     - "职场"
-  
+
   # 微博热搜配置
   weibo:
     enabled: true
@@ -69,7 +117,7 @@ hotspot:
     # 备用：使用RSS源
     rss_url: "https://rsshub.app/weibo/hot"
     max_items: 50  # 最多获取条数
-  
+
   # 新闻API配置
   news:
     enabled: true
@@ -90,14 +138,14 @@ comment:
     - "物联网技术专家"
     - "科技评论员"
     - "10年+科技行业从业者"
-  
+
   # 写作风格
   style:
     tone: "犀利但不失温度，有深度但不晦涩"
     perspective: "技术专家视角 + 生活观察者视角"
     structure: "观点先行，论据支撑，结尾升华"
     length: "800-1500字"
-  
+
   # 平台风格适配
   platform_styles:
     wechat:
@@ -112,7 +160,7 @@ comment:
       body_style: "活泼口语化，短段落，大量emoji，要点式列举"
       ending_style: "互动提问引导评论"
       emoji_usage: "大量使用，每段2-3个"
-  
+
   # 风格参考样本（可选，提供1-2篇过往评论）
   style_samples: []
 
@@ -120,7 +168,7 @@ comment:
 image:
   # 是否启用自动配图
   enabled: true
-  # 图片风格: digital_art(数字艺术), photorealistic(写实), illustration(插画), 
+  # 图片风格: digital_art(数字艺术), photorealistic(写实), illustration(插画),
   #           minimalist(极简), abstract(抽象), cinematic(电影感)
   style: "digital_art"
   # 图片比例: landscape_16_9, landscape_4_3, square_hd, portrait_4_3
