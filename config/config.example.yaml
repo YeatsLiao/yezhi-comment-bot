@@ -1,0 +1,179 @@
+# 叶芝说·实时评论AI助手 配置文件
+# 复制此文件为 config.yaml 并填入真实配置
+
+# ============ AI模型配置 ============
+ai:
+  # 默认使用的模型: "openai" 或 "claude"
+  default_model: "openai"
+  
+  openai:
+    api_key: "sk-your-openai-api-key"
+    model: "gpt-4o"
+    base_url: "https://api.openai.com/v1"  # 可替换为代理地址
+    max_tokens: 2000
+    temperature: 0.8
+  
+  claude:
+    api_key: "sk-ant-your-claude-api-key"
+    model: "claude-sonnet-4-20250514"
+    max_tokens: 2000
+    temperature: 0.8
+
+# ============ 热点数据源配置 ============
+hotspot:
+  # 关注领域关键词（用于过滤和排序热点）
+  focus_keywords:
+    - "AI"
+    - "人工智能"
+    - "大模型"
+    - "GPT"
+    - "ChatGPT"
+    - "芯片"
+    - "半导体"
+    - "互联网"
+    - "科技公司"
+    - "软件"
+    - "开源"
+    - "苹果"
+    - "谷歌"
+    - "微软"
+    - "华为"
+    - "字节跳动"
+    - "腾讯"
+    - "阿里"
+    - "百度"
+    - "小米"
+    - "特斯拉"
+    - "自动驾驶"
+    - "区块链"
+    - "元宇宙"
+    - "云计算"
+    - "网络安全"
+    - "数据隐私"
+    - "5G"
+    - "物联网"
+    - "机器人"
+    - "编程"
+    - "开发者"
+    - "创业"
+    - "融资"
+    - "IPO"
+    - "裁员"
+    - "职场"
+  
+  # 微博热搜配置
+  weibo:
+    enabled: true
+    # 微博热搜API地址（使用第三方聚合API）
+    api_url: "https://weibo.com/ajax/side/hotSearch"
+    # 备用：使用RSS源
+    rss_url: "https://rsshub.app/weibo/hot"
+    max_items: 50  # 最多获取条数
+  
+  # 新闻API配置
+  news:
+    enabled: true
+    # 支持的API: "newsapi", "toutiao", "zhihu", "36kr"
+    provider: "36kr"
+    # 36氪RSS
+    rss_url: "https://rsshub.app/36kr/hot-list"
+    # NewsAPI配置（如使用）
+    newsapi:
+      api_key: "your-newsapi-key"
+      url: "https://newsapi.org/v2/top-headlines"
+    max_items: 30
+
+# ============ 评论生成配置 ============
+comment:
+  # 个人身份标签
+  identity_tags:
+    - "物联网技术专家"
+    - "科技评论员"
+    - "10年+科技行业从业者"
+  
+  # 写作风格
+  style:
+    tone: "犀利但不失温度，有深度但不晦涩"
+    perspective: "技术专家视角 + 生活观察者视角"
+    structure: "观点先行，论据支撑，结尾升华"
+    length: "800-1500字"
+  
+  # 平台风格适配
+  platform_styles:
+    wechat:
+      enabled: true
+      title_style: "吸引眼球但不过度标题党，15字以内"
+      body_style: "深度分析，结构清晰，分段合理，适当使用小标题"
+      ending_style: "引发思考的问题或金句收尾"
+      emoji_usage: "克制使用，仅关键处点缀"
+    xiaohongshu:
+      enabled: false
+      title_style: "吸睛标题，带emoji，20字以内"
+      body_style: "活泼口语化，短段落，大量emoji，要点式列举"
+      ending_style: "互动提问引导评论"
+      emoji_usage: "大量使用，每段2-3个"
+  
+  # 风格参考样本（可选，提供1-2篇过往评论）
+  style_samples: []
+
+# ============ 配图生成配置 ============
+image:
+  # 是否启用自动配图
+  enabled: true
+  # 图片风格: digital_art(数字艺术), photorealistic(写实), illustration(插画), 
+  #           minimalist(极简), abstract(抽象), cinematic(电影感)
+  style: "digital_art"
+  # 图片比例: landscape_16_9, landscape_4_3, square_hd, portrait_4_3
+  aspect_ratio: "landscape_16_9"
+  # 配图输出目录
+  output_dir: "data/images"
+  # 品牌名称（用于提示词风格一致性）
+  brand_name: "叶芝说"
+  # 品牌主色调（用于提示词）
+  brand_colors:
+    - "#1a1a2e"   # 深海蓝
+    - "#16213e"   # 暗蓝
+    - "#0f3460"   # 钴蓝
+    - "#e94560"   # 亮红点缀
+  # 图片不带文字（强制要求）
+  no_text: true
+
+# ============ 公众号配置 ============
+wechat_mp:
+  enabled: true
+  app_id: "your-app-id"
+  app_secret: "your-app-secret"
+  # 草稿箱发布模式: true=先存草稿人工审核, false=直接发布
+  draft_mode: true
+  # 文章封面图（可选，留空则自动生成）
+  cover_image: ""
+  # 文章分类
+  category: ""  # 如 "科技", "互联网"
+
+# ============ 调度配置 ============
+scheduler:
+  # 执行时间（24小时制）
+  hour: 8
+  minute: 0
+  # 时区
+  timezone: "Asia/Shanghai"
+  # 是否启用自动调度
+  enabled: true
+
+# ============ 日志配置 ============
+logging:
+  level: "INFO"
+  file: "logs/yezhi-bot.log"
+  max_size: "10MB"
+  backup_count: 5
+
+# ============ 其他配置 ============
+general:
+  # 语言
+  language: "zh-CN"
+  # 每次运行生成的评论数量
+  comments_per_run: 1
+  # 是否自动去重（避免评论相同热点）
+  auto_dedup: true
+  # 已发布热点记录文件
+  published_record: "data/published.json"
