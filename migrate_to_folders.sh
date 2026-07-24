@@ -2,7 +2,7 @@
 
 # 迁移脚本：将文章、封面图、配图按文章分文件夹整理
 
-DATA_DIR="/workspace/yezhi-comment-bot/data"
+DATA_DIR="/workspace/yeats-comment-bot/data"
 
 # 1. 处理文章文件
 for article in "$DATA_DIR"/comment_*.md; do

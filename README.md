@@ -45,8 +45,8 @@
 ### 1. 克隆项目
 
 ```bash
-git clone https://github.com/YeatsLiao/yezhi-comment-bot.git
-cd yezhi-comment-bot
+git clone https://github.com/YeatsLiao/yeats-comment-bot.git
+cd yeats-comment-bot
 ```
 
 ### 2. 安装依赖
@@ -88,7 +88,7 @@ python -m src.main --schedule
 ## 项目结构
 
 ```
-yezhi-comment-bot/
+yeats-comment-bot/
 ├── config/
 │   ├── config.example.yaml   # 配置模板（含多厂商示例）
 │   └── config.yaml           # 你的配置（需自行创建，git忽略）
