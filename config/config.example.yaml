@@ -211,7 +211,7 @@ scheduler:
 # ============ 日志配置 ============
 logging:
   level: "INFO"
-  file: "logs/yezhi-bot.log"
+  file: "logs/yeats-bot.log"
   max_size: "10MB"
   backup_count: 5
 

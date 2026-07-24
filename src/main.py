@@ -21,10 +21,10 @@ from src.generator.image_gen import ImageGenerator
 from src.publisher.wechat_mp import WeChatMPPublisher
 from src.scheduler import TaskScheduler
 
-logger = logging.getLogger("yezhi")
+logger = logging.getLogger("yeats")
 
 
-class YezhiBot:
+class YeatsBot:
     """叶芝说评论机器人"""
     
     def __init__(self, config_path: str = "config/config.yaml"):
@@ -340,7 +340,7 @@ def main():
     logger = setup_logging(config)
     
     # 创建机器人实例
-    bot = YezhiBot(args.config)
+    bot = YeatsBot(args.config)
     
     if args.dry_run:
         logger.info("🔧 试运行模式：将只生成评论，不发布到公众号")

@@ -13,7 +13,7 @@ def setup_logging(config: dict) -> logging.Logger:
     """配置日志"""
     log_config = config.get("logging", {})
     log_level = getattr(logging, log_config.get("level", "INFO").upper())
-    log_file = log_config.get("file", "logs/yezhi-bot.log")
+    log_file = log_config.get("file", "logs/yeats-bot.log")
     
     # 确保日志目录存在
     log_dir = os.path.dirname(log_file)
@@ -21,7 +21,7 @@ def setup_logging(config: dict) -> logging.Logger:
         os.makedirs(log_dir, exist_ok=True)
     
     # 配置根logger
-    logger = logging.getLogger("yezhi")
+    logger = logging.getLogger("yeats")
     logger.setLevel(log_level)
     
     # 控制台handler
