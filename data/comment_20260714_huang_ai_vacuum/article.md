@@ -109,6 +109,6 @@ AI只是加速了这个过程。
 7. [阶跃星辰首款大模型原生智能体手机亮相](http://m.toutiao.com/group/7661986871480680995/)，澎湃新闻，2026-07-13
 8. [共创未来 2026世界人工智能大会令人期待](http://www.xinhuanet.com/expo/20260714/e45e2d6dacd14de8a89116c978df6ebd/c.html)，新华网，2026-07-14
 9. [豆包、千问下线智能体，AI拟人监管新规即将施行](http://m.toutiao.com/group/7662136142577402377/)，上观新闻，2026-07-14
-10. [ChatGPT Work技术架构拆解：Codex并入背后的三模式统一入口设计](https://github.com/YeatsLiao/yeats-comment-bot)，夜知猩球，2026-07-10
+10. [ChatGPT Work技术架构拆解：Codex并入背后的三模式统一入口设计](https://github.com/YeatsLiao/yeats-tech-blog)，夜知猩球，2026-07-10
 
 <small>本文配图使用AI生成，遵循CC0协议。</small>
