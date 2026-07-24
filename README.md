@@ -45,8 +45,8 @@
 ### 1. 克隆项目
 
 ```bash
-git clone https://github.com/YeatsLiao/yeats-tech-blog.git
-cd yeats-tech-blog
+git clone https://github.com/YeatsLiao/yeats-tech-skill.git
+cd yeats-tech-skill
 ```
 
 ### 2. 安装依赖
@@ -88,7 +88,7 @@ python -m src.main --schedule
 ## 项目结构
 
 ```
-yeats-tech-blog/
+yeats-tech-skill/
 ├── config/
 │   ├── config.example.yaml   # 配置模板（含多厂商示例）
 │   └── config.yaml           # 你的配置（需自行创建，git忽略）
